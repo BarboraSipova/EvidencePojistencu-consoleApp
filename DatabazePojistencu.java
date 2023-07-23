@@ -4,14 +4,12 @@ import java.util.Scanner;
  *
  * @author Barbora Šípová
  */
-public class DatabazePojistencu { //přejmenovat
-
+public class DatabazePojistencu {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in, "UTF-8");
         Databaze databaze = new Databaze();
-
+        // hlavní cyklus s volbou pro akci, kterou chce uživatel provést
         String volba = "";
-        // hlavní cyklus
         while (!volba.equals("4")) {
             databaze.vypisUvodniObrazovku();
             volba = scanner.nextLine();

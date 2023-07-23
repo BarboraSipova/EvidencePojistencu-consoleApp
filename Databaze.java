@@ -2,15 +2,22 @@ package Craft;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * třída reprezentující databázi
+ */
 public class Databaze {
     Scanner scanner = new Scanner(System.in, "Windows-1250");
+    /**
+     * vytvoření nového ArrayListu kde se budou ukládat osoby
+     */
     private final ArrayList<Osoba> osoby = new ArrayList<>();
-
+    /**
+     * metoda pro přidání pojištence do ArrayListu
+     */
     public void pridejPojistence() {
         Osoba osoba = new Osoba();
         osoby.add(osoba);
     }
-
     /**
      * metoda vyhledávající pojištěnce dle jména a příjmení
      */
@@ -31,7 +38,9 @@ public class Databaze {
             }
         }
     }
-
+    /**
+     * metoda pro výpis všech pojištěnců v databázi
+     */
     public void vypisPojistence() {
         if (!osoby.isEmpty()) {
             osoby.forEach(osoba -> System.out.println(osoba));
@@ -39,7 +48,9 @@ public class Databaze {
             System.out.println("Nenalezeny žádné údaje.");
         }
     }
-
+    /**
+     * metoda vypisující úvodní obrazovku s nabídkou úkonů
+     */
     public void vypisUvodniObrazovku() {
         System.out.println();
         System.out.println("========== Evidence pojištěných ==========");
@@ -51,12 +62,17 @@ public class Databaze {
         System.out.println("4 - Konec");
         System.out.println();
     }
-
+    /**
+     * metoda vypisující rozloučení po ukončení práce s aplikací
+     */
     public void vypisRozlouceni() {
         System.out.println();
-        System.out.println("Děkujeme Vám za použití naší evidence.");
+        System.out.println("Děkujeme Vám, za použití naší evidence.");
     }
-
+    /**
+     * metoda toString vypisující jednotlivé osoby z ArrayListu
+     * @return osoba
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
